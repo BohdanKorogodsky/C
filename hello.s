@@ -2,9 +2,7 @@
 	.text
 	.section	.rodata
 .LC0:
-	.string	"vp: %p\n"
-.LC1:
-	.string	"ip: %p\n"
+	.string	"Value: %d\n"
 	.text
 	.globl	main
 	.type	main, @function
@@ -27,14 +25,9 @@ main:
 	movq	-24(%rbp), %rax
 	movq	%rax, -16(%rbp)
 	movq	-16(%rbp), %rax
-	movq	%rax, %rsi
+	movl	(%rax), %eax
+	movl	%eax, %esi
 	leaq	.LC0(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movq	-24(%rbp), %rax
-	movq	%rax, %rsi
-	leaq	.LC1(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
