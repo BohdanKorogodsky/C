@@ -1,18 +1,14 @@
 #include <stdio.h>
 
-void swap(int *a, int *b);
-
-void swap(int *pa, int *pb) {
-    int t = *pa;
-    *pa = *pb;
-    *pb = t;
-    printf("*pa = %d \t *pb = %d \n", *pa, *pb);
+void increment(void) {
+    static unsigned int counter = 0;
+    counter++;
+    printf("%d", counter);
 }
 
 int main(void) {
-    int a = 21;
-    int b = 17;
-    swap(&a, &b);
-    printf("main: a = %d, b = %d\n", a, b);
+    for (int i = 0; i < 5; i++) {
+        increment();
+    }
     return 0;
 }
