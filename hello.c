@@ -5,7 +5,7 @@ int main(void)
     int a = 10;
     int *pa = &a;
     printf("pa: address=%p \t value=%d \n", (void *)pa, *pa);
-    int b = (*pa)++;
+    int b = ++*pa;
 
     printf("b: value=%d \n", b);
     printf("pa: address=%p \t value=%d \n", (void *)pa, *pa);
