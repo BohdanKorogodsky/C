@@ -2,17 +2,14 @@
 
 int main(void)
 {
-    double d = 10.6;
-    double *pd = &d;
-    printf("Pointer pd: address=%p \n", (void *)pd);
-    pd = pd + 2;
-    printf("Pointer pd: address=%p \n", (void *)pd);
+    int a = 10;
+    int b = 23;
+    int *pa = &a;
+    int *pb = &b;
+    int c = pa - pb;
 
-    char c = 'N';
-    char *pc = &c;
-    printf("Pointer pc: address=%p \n", (void *)pc);
-    pc = pc - 3;
-    printf("Pointer pc: address=%p \n", (void *)pc);
-    
+    printf("pa=%p \n", (void *)pa);
+    printf("pb=%p \n", (void *)pb);
+    printf("c=%d \n", c);
     return 0;
 }
