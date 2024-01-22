@@ -1,8 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+// void swap(int *a, int *b);
+
+void swap(int *pa, int *pb) {
+    int t = *pa;
+    *pa = *pb;
+    *pa = t;
+    printf("*pa = %d \t *pb = %d \n", *pa, *pb);
+}
+
 int main(void) {
-    if (printf("%s\n", "Hello, world!") == -1) {
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
+    int a = 21;
+    int b = 17;
+    swap(&a, &b);
+    printf("main: a = %d, b = %d\n", a, b);
+    return 0;
 }
